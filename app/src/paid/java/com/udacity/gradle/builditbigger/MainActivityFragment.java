@@ -15,9 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.udacity.gradle.builditbigger.joketeller.JokeTellerActivity;
 
-import com.udacity.gradle.builditbigger.JokeSmith;
-import com.udacity.gradle.builditbigger.joketeller.JokeActivity;
 
 public class MainActivityFragment extends Fragment implements EndpointsAsyncTask.mCallback{
 
@@ -51,8 +50,8 @@ public class MainActivityFragment extends Fragment implements EndpointsAsyncTask
 
     public void onCallbackResult(String result) {
         //retrievedJoke = result;
-        Intent sendIntent = new Intent(getActivity(), JokeActivity.class);
-        sendIntent.putExtra(JokeActivity.TAG, result);
+        Intent sendIntent = new Intent(getActivity(), JokeTellerActivity.class);
+        sendIntent.putExtra(JokeTellerActivity.TAG, result);
         mProgressBar.setVisibility(View.INVISIBLE);
         startActivity(sendIntent);
     }
